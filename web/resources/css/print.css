@@ -1,0 +1,111 @@
+
+@page  {
+    size: 29.7cm 21cm;
+    margin: 0.5cm;
+}
+
+td{
+    width: 0.5cm;
+    height: 20px;
+    text-align: right;
+}
+
+table, td {
+    border: 0.5px solid #ddd;
+}
+
+table{
+  width: inherit;
+  table-layout: fixed;
+}
+
+.my-title{
+    font-size: 26px;
+}
+
+
+
+.employee-name{
+    width: 1.5cm;
+}
+
+.employee-name button{
+    font-size: 9px;
+}
+
+
+.day-block{
+    max-width: 8.5cm;
+    margin-left: 0.5cm;
+
+}
+
+.day-block, .day-name{
+    display: inline-block;
+}
+
+.day-name{
+    text-align: center;
+}
+
+.day-title{
+    font-size: 20px;
+}
+
+body{
+    font-size: 8px !important;
+    -webkit-print-color-adjust: exact;
+}
+
+
+.container-fluid{
+    margin: 0;
+}
+
+.hour-container{
+  width: inherit;
+  height: inherit;
+
+}
+
+
+.vertical-separator {
+    height: 15px;
+    background-color: black !important;
+    display: inline-block;
+    width: 1.5px;
+    margin-top: 2px;
+    -webkit-print-color-adjust: exact;
+    margin-right: -4px;
+
+}
+.horizontal {
+    background-color: red !important;
+    width: 46%;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2px;
+    -webkit-print-color-adjust: exact;
+    margin-top: -5px;
+    margin-right: -15px;
+}
+
+
+.my-cont{
+    position: relative;
+}
+.hour{
+    width: 109% !important;
+    max-width: 109% !important;
+    margin-left: -0.5px;
+
+}
+
+.horizontal-full{
+    height: 2px;
+    background-color: red;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+
+}

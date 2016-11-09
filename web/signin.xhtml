@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no"/>-->
+    <ui:include src="head.xhtml"/>
+</h:head>
+
+<h:body>
+
+    <div id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <h1>Connexion</h1>
+                        <h:form id="login-form">
+                            <div class="form-group #{connectionBean.error==true ? 'has-error has-feedback': ''}">
+                                <h:outputLabel for="user" class="control-label">Utilisateur</h:outputLabel>
+                                <h:inputText type="text" name="user" id="user" class="form-control" placeholder="Utilisateur"
+                                       value="#{connectionBean.user.name}" required="true"/>
+                                <h:outputText rendered="#{connectionBean.error ==true }" class="glyphicon glyphicon-remove form-control-feedback"
+                                      aria-hidden="true"/>
+                                <!--<span class="help-block">#{connectionBean.error}</span>-->
+                            </div>
+
+                            <div class="form-group #{connectionBean.error==true ? 'has-error has-feedback': ''}">
+                                <h:outputLabel for="password" class="control-label">Mot de passe</h:outputLabel>
+                                <h:inputSecret type="password" name="password" id="password" required="true" class="form-control"
+                                       placeholder="Mot de Passe" value="#{connectionBean.user.password}"/>
+
+                                <h:outputText rendered="#{connectionBean.error==true}" class="glyphicon glyphicon-remove form-control-feedback"
+                                      aria-hidden="true"/>
+                                <!--<span class="help-block">#{connectionBean.error}</span>-->
+                            </div>
+                            <h:commandButton id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in" action="#{connectionBean.connectUser}"
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h:messages globalOnly="true"/>
+
+                    <h:panelGroup rendered="#{!empty sessionScope.user}">
+                        Connected as : #{sessionScope.user.name}
+                    </h:panelGroup>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div>
+
+
+</h:body>
+
+</html>
